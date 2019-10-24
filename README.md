@@ -35,10 +35,6 @@ npm run test:e2e
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
 ### 如果使用
 
   1: 首先下载ttf格式的字体文件
