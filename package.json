@@ -6,11 +6,31 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "electron:build-win32": "vue-cli-service electron:build --win  --ia32",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:build-staging": "vue-cli-service electron:build --mode staging",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "adm-zip": "^0.4.13",
+    "chai-as-promised": "^7.1.1",
+    "compressing": "^1.4.0",
     "core-js": "^3.1.2",
+    "dayjs": "^1.8.16",
+    "electron-builder": "^21.2.0",
+    "electron-is": "^3.0.0",
+    "electron-localshortcut": "^3.1.0",
+    "electron-updater": "^4.1.2",
+    "element-ui": "^2.4.5",
+    "font-spider": "^1.3.5",
+    "fs-extra": "^8.1.0",
+    "nedb": "^1.8.0",
+    "node-cmd": "^3.0.0",
+    "shelljs": "^0.8.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vuex": "^3.0.1"
@@ -26,6 +46,7 @@
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
     "chromedriver": "77",
+    "electron": "^6.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -33,6 +54,9 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "prettier": "^1.18.2",
+    "vue-cli-plugin-electron-builder": "^1.4.0",
+    "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "main": "background.js"
 }

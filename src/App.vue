@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import { ipcRenderer } from "electron";
+export default {
+  name: "app",
+  components: {},
+  mounted() {
+    ipcRenderer.on("message", this.checkoutUpdate);
+  },
+  destroyed() {
+    ipcRenderer.removeListener("message", this.updateHandler);
+  },
+  methods: {
+    checkoutUpdate(e, { message }) {
+      if (message === "isUpdateNow") {
+        if (confirm("是否现在更新？")) {
+          ipcRenderer.send("updateNow");
+        }
+      }
+      // ipcRenderer.on("message", (event, { message }) => {
+      //   console.log(message, "checkoutUpdate");
+      //   if (message === "isUpdateNow") {
+      //     if (confirm("是否现在更新？")) {
+      //       ipcRenderer.send("updateNow");
+      //     }
+      //   }
+      // });
     }
   }
+};
+</script>
+
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
 }
 </style>

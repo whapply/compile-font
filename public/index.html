@@ -1,17 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>electron-font</title>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but electron-font doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <style>
+        .skeleton-loading {
+          color: rgba(200, 200, 200, 0.5);
+          font-size: 30px;
+          height: 100px;
+          margin: 0 auto;
+          margin-top: calc((100vh - 100px) / 2);
+          text-align: center;
+          -webkit-transition: 0.3s color, 0.3s border;
+          transition: 0.3s color, 0.3s border;
+        }
+
+        .skeleton-loader {
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          color: inherit;
+          vertical-align: middle;
+          pointer-events: none;
+        }
+
+        .skeleton-loader {
+          border: 1px solid currentcolor;
+          border-radius: 50%;
+          -webkit-animation: 1s skeleton-loader linear infinite;
+          animation: 1s skeleton-loader linear infinite;
+          position: relative;
+        }
+
+        .skeleton-loader:before {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: -0.2em;
+          left: 50%;
+          border: 0.2em solid currentcolor;
+          border-radius: 50%;
+        }
+
+        @-webkit-keyframes skeleton-loader {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes skeleton-loader {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+      <div class="skeleton-loading">
+        <div class="skeleton-loader"></div>
+      </div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
