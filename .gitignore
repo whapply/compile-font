@@ -24,6 +24,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-*.ttf
 #Electron-builder output
 /dist_electron
