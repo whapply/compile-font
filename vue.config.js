@@ -37,15 +37,15 @@ module.exports = {
         mac: {
           icon: resolve("public/app.icns"),
           target: ["zip", "dmg"]
+        },
+        nsis: {
+          oneClick: false,
+          perMachine: true,
+          allowElevation: true,
+          allowToChangeInstallationDirectory: true,
+          createDesktopShortcut: true,
+          runAfterFinish: true
         }
-        // nsis: {
-        //   oneClick: false,
-        //   perMachine: true,
-        //   allowElevation: true,
-        //   allowToChangeInstallationDirectory: true,
-        //   createDesktopShortcut: true,
-        //   runAfterFinish: true
-        // }
       }
     }
   }
