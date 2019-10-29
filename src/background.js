@@ -7,7 +7,7 @@ import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
 const isDevelopment = process.env.NODE_ENV !== "production";
 import setShortsCut from "./main/utils/shortcuts";
 import * as menu from "./main/utils/menu";
-import checkForUpdates from "./main/utils/autoUpdate";
+// import checkForUpdates from "./main/utils/autoUpdate";
 // const { autoUpdater } = require("electron-updater");
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -78,7 +78,7 @@ app.on("ready", async () => {
     //   console.error('Vue Devtools failed to install:', e.toString())
     // }
   } else {
-    checkForUpdates(win.webContents);
+    // checkForUpdates(win.webContents);
   }
   createWindow();
   setShortsCut(win);

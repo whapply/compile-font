@@ -24,12 +24,12 @@ module.exports = {
     // electron-builder配置
     electronBuilder: {
       builderOptions: {
-        publish: [
-          {
-            provider: "generic",
-            url: process.env.VUE_APP_RELEASE_PROVIDER
-          }
-        ],
+        // publish: [
+        //   {
+        //     provider: "generic",
+        //     url: process.env.VUE_APP_RELEASE_PROVIDER
+        //   }
+        // ],
         win: {
           icon: resolve("public/app.ico"),
           target: "nsis"
@@ -37,15 +37,15 @@ module.exports = {
         mac: {
           icon: resolve("public/app.icns"),
           target: ["zip", "dmg"]
-        },
-        nsis: {
-          oneClick: false,
-          perMachine: true,
-          allowElevation: true,
-          allowToChangeInstallationDirectory: true,
-          createDesktopShortcut: true,
-          runAfterFinish: true
         }
+        // nsis: {
+        //   oneClick: false,
+        //   perMachine: true,
+        //   allowElevation: true,
+        //   allowToChangeInstallationDirectory: true,
+        //   createDesktopShortcut: true,
+        //   runAfterFinish: true
+        // }
       }
     }
   }

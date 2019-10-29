@@ -12,10 +12,10 @@ export default {
   name: "app",
   components: {},
   mounted() {
-    ipcRenderer.on("message", this.checkoutUpdate);
+    // ipcRenderer.on("message", this.checkoutUpdate);
   },
   destroyed() {
-    ipcRenderer.removeListener("message", this.updateHandler);
+    // ipcRenderer.removeListener("message", this.updateHandler);
   },
   methods: {
     checkoutUpdate(e, { message }) {
