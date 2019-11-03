@@ -28,7 +28,6 @@ export function compile(fontHtmlPath) {
       .catch(e => {
         console.log("remove fail", e);
       });
-    //  打包下载
   });
 }
 

@@ -23,4 +23,10 @@ export default {
 };
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="scss">
+.wrap {
+  :global(.table-wrap) {
+    border: 1px solid red;
+  }
+}
+</style>
