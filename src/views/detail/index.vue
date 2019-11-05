@@ -166,9 +166,7 @@ export default {
     },
 
     removeHandle(item, index) {
-      console.log(item, index);
       this.compileArr.splice(index, 1);
-      console.log(this.compileArr, "this.compileArr.splice");
     },
 
     updateSuccess() {
