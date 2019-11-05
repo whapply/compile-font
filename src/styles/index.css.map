@@ -1,1 +1,0 @@
-{"version":3,"sources":["<input css 1>","utilitiles.less"],"names":[],"mappings":"AAAA,yBCAA,OACE,gBAAA,CAGF,OACE,eAAA,CAAA","file":"to.css","sourcesContent":["@import 'transition.css';.ml-20{margin-left:20px}.mt-20{margin-top:20px}/*# sourceMappingURL=./index.css.map */",null]}

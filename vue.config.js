@@ -15,7 +15,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        renderer: resolve("src/renderer"),
+        "@": resolve("src/renderer"),
         main: resolve("src/main")
       }
     }
