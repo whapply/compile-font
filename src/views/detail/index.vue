@@ -10,7 +10,15 @@
 
     <ul id="font-list">
       <li v-for="(item, index) in compileArr" :key="index" class="mt-20">
-        <span>{{ item.type }}</span>
+        <p>
+          <span>{{ item.type }}</span>
+          <Btn
+            @clickHandle="removeHandle(item, index)"
+            :loading="loading"
+            class="ml-20"
+            text="移除"
+          ></Btn>
+        </p>
         <el-input
           type="textarea"
           :rows="3"
@@ -157,6 +165,12 @@ export default {
       this.$router.go(-1);
     },
 
+    removeHandle(item, index) {
+      console.log(item, index);
+      this.compileArr.splice(index, 1);
+      console.log(this.compileArr, "this.compileArr.splice");
+    },
+
     updateSuccess() {
       this.$message.success(
         `已下载到文件${remote.app.getPath("downloads")}文件夹`
@@ -204,8 +218,11 @@ export default {
   }
   #font-list {
     li {
-      span {
-        line-height: 30px;
+      p {
+        margin: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }
