@@ -97,13 +97,15 @@ export default {
       });
     },
     handleDelete(index, row) {
-      this.$alert("是否删除该条记录", {
+      this.$confirm("是否删除该条记录?", "提示", {
         confirmButtonText: "确定",
-        type: "warning",
-        callback: () => {
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+        .then(() => {
           this.delHistory(row);
-        }
-      });
+        })
+        .catch(() => {});
     },
     delHistory(row) {
       IndexDB.remove({ createTime: row.createTime }).then(() => {
