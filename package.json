@@ -46,7 +46,7 @@
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
     "chromedriver": "77",
-    "electron": "^6.0.0",
+    "electron": "^15.5.5",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
